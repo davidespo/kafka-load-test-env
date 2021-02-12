@@ -45,6 +45,10 @@ $ bin/syncTopics-macos
 
 ## Access Kafka Credentials
 
+The following credentials are a programatic way of obtaining copies of the
+cluster credentials. Ensure that you use the correct service and project name
+for the desired cluster.
+
 ```sh
 # Credential Files Only
 $ avn service user-creds-download $KAFKA_SERVICE_NAME --username avnadmin --project $AVN_PROJECT
@@ -82,6 +86,7 @@ avn service update --power-off $KAFKA_SERVICE_NAME --project $AVN_PROJECT
 avn service update --power-off "metrics-dashboard" --project $AVN_PROJECT
 avn service update --power-off "metrics-influxdb" --project $AVN_PROJECT
 
+# The following lines will reverse the above actions
 avn service update --power-on $KAFKA_SERVICE_NAME --project $AVN_PROJECT
 avn service update --power-on "metrics-dashboard" --project $AVN_PROJECT
 avn service update --power-on "metrics-influxdb" --project $AVN_PROJECT
@@ -96,4 +101,6 @@ and all data associated with it.
 
 ```sh
 $ terraform destroy --var-file=.env .
+# You can reverse the following action using `terraform apply ...` to
+# recreate the environment.
 ```
