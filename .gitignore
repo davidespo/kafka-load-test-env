@@ -3,3 +3,4 @@ dist/*.LICENSE.txt
 .terraform
 terraform.tfstate
 .env
+tmp
